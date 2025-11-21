@@ -55,7 +55,9 @@ void main() {
 		);
 		imageStore(blockMapImg, ivec3(mapIPos), blockData);
 	}
-
+	#ifdef MOVE_CAMERA
+	eyePlayerPos -= texture(jellyPosTexCopy, vec3(0.5)).xyz * onGroundSmooth;
+	#endif
 	viewPos = mat3(gbufferModelView) * eyePlayerPos;
 	gl_Position = gl_ProjectionMatrix * vec4(viewPos, 1.0);
 }
