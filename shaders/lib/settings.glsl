@@ -1,0 +1,1 @@
+#define MOVE_CAMERA
