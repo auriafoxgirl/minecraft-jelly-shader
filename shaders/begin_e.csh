@@ -44,7 +44,7 @@ void main() {
 
    vec3 targetPos = jellyPos;
    vec3 wobbleDirStrength = vec3(0.0);
-   for (int i = 0; i < DIRS.length; i++) {
+   for (int i = 0; i < 6; i++) {
       ivec3 dir = DIRS[i];
       vec3 pos = imageLoad(jellyPosImg, prevPos + dir).xyz;
       wobbleDirStrength += length(pos) * vec3(dir);
